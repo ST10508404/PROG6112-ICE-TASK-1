@@ -5,19 +5,23 @@ public class FlowerShop
 {
     int[][] salesEntries = new int[7][3];
     Scanner input = new Scanner(System.in);
-    void enterSales()
+    String[] days = new String[]{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+    String[] flowers = new String[]{"Roses", "Tulips", "Lillies"};
+    public void enterSales()
     {
-      for(int days = 0; days < salesEntries.length - 1; days++)
+      
+      for(int day = 0; day < salesEntries.length - 1; day++)
       {
-          for(int flowers = 0; flowers < 2; flowers++)
+          for(int flower = 0; flower < 2; flower++)
           {
-            System.out.println("Please Enter Sales for: ");
-            salesEntries[days][flowers] = input.nextInt();
+            
+            System.out.println("Please Enter Sales for: " + days[day] + "for the flower: " + flowers[flower]);
+            salesEntries[day][flower] = input.nextInt();
           }
       }
       input.close();
     }
-    void displaySales()
+    public void displaySales()
     {
       int total = 0;
       System.out.println("=============================================");
@@ -106,7 +110,7 @@ public class FlowerShop
          System.out.println("------------------------------------------------");
       }
     }
-    void calculateBouquetSales()
+    public void calculateBouquetSales()
     {
        int totalRoses =0, totalTulips = 0, totalLillies = 0, totalSales = 0;
        
@@ -142,7 +146,7 @@ public class FlowerShop
       System.out.println("Total sales for Tulips: R" + totalLillies);
       System.out.println("");
     }
-    void calculateDailySales()
+    public void calculateDailySales()
     {
        int[] dailyTotals = new int[7];
        for(int day = 0; day < 6; day++)
@@ -177,7 +181,7 @@ public class FlowerShop
            }
        }
     }
-    void calculateTotalSales()
+    public void calculateTotalSales()
     {
         int totalSales = 0;
    
@@ -193,7 +197,11 @@ public class FlowerShop
     }
     public static void main(String[] args)
     {
-       
-       
+      FlowerShop flower = new FlowerShop();
+      flower.enterSales();
+      flower.displaySales();
+      flower.calculateBouquetSales();
+      flower.calculateDailySales();
+      flower.calculateTotalSales();
     }
 }
