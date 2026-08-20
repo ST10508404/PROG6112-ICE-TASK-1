@@ -135,6 +135,61 @@ public class FlowerShop
       System.out.print("\t" + totalTulips);
       System.out.print("\t" + totalLillies);
       System.out.print("\t" + totalSales);
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Total sales for Roses: R" + totalRoses);
+      System.out.println("Total sales for Tulips: R" + totalTulips);
+      System.out.println("Total sales for Tulips: R" + totalLillies);
+      System.out.println("");
+    }
+    void calculateDailySales()
+    {
+       int[] dailyTotals = new int[7];
+       for(int day = 0; day < 6; day++)
+       {
+           for(int flower = 0; flower < 2; flower++)
+           {
+              dailyTotals[day] += salesEntries[day][flower];
+           }
+           switch(day)
+           {
+               case 0:
+                   System.out.println("Total sales for Monday: R " + dailyTotals[day]);
+               break;
+               case 1:
+                   System.out.println("Total sales for Tuesday: R " + dailyTotals[day]);
+               break;
+               case 2:
+                   System.out.println("Total sales for Wednesday: R " + dailyTotals[day]);
+               break;
+               case 3:
+                   System.out.println("Total sales for Thursday: R " + dailyTotals[day]);
+               break;
+               case 4:
+                   System.out.println("Total sales for Friday: R " + dailyTotals[day]);
+               break;
+               case 5:
+                   System.out.println("Total sales for Saturday: R " + dailyTotals[day]);
+               break;
+               case 6:
+                   System.out.println("Total sales for Sunday: R " + dailyTotals[day]);
+               break;
+           }
+       }
+    }
+    void calculateTotalSales()
+    {
+        int totalSales = 0;
+   
+      for(int day = 0; day < 6; day++)
+       {
+         for(int flower = 0; flower < 2; flower++)
+           {
+              totalSales += salesEntries[day][flower];
+           }   
+       }
+      System.out.println(""); 
+      System.out.println("Overall Total Sales: R " + totalSales);
     }
     public static void main(String[] args)
     {
