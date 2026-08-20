@@ -11,6 +11,7 @@ public class FlowerShop
       {
           for(int flowers = 0; flowers < 2; flowers++)
           {
+            System.out.println("Please Enter Sales for: ");
             salesEntries[days][flowers] = input.nextInt();
           }
       }
@@ -18,6 +19,7 @@ public class FlowerShop
     }
     void displaySales()
     {
+      int total = 0;
       System.out.println("=============================================");
       System.out.println("\tFLOWER SHOP WEEKLY SALES REPORT");
       System.out.println("=============================================");
@@ -28,53 +30,74 @@ public class FlowerShop
          switch(day)
          {
              case 0: 
+             total = 0;
              System.out.println("Monday");
              for(int flower = 0; flower < 2; flower++)
              {
-              System.out.print("\t" + salesEntries[day][flower]);   
+              System.out.print("\t" + salesEntries[day][flower]); 
+              total += salesEntries[day][flower];
              }
+             System.out.print("\t" + total);
              break;
              case 1: 
+             total = 0;
              System.out.println("Monday");
              for(int flower = 0; flower < 2; flower++)
              {
-              System.out.print("\t" + salesEntries[day][flower]);   
+              System.out.print("\t" + salesEntries[day][flower]);
+              total += salesEntries[day][flower];
              }
+             System.out.print("\t" + total);
              break;
              case 2: 
+             total = 0;
              System.out.println("Monday");
              for(int flower = 0; flower < 2; flower++)
              {
-              System.out.print("\t" + salesEntries[day][flower]);   
+              System.out.print("\t" + salesEntries[day][flower]); 
+              total += salesEntries[day][flower];
              }
+             System.out.print("\t" + total);
              break;
-             case 3: 
+             case 3:
+             total = 0;
              System.out.println("Monday");
              for(int flower = 0; flower < 2; flower++)
              {
-              System.out.print("\t" + salesEntries[day][flower]);   
+              System.out.print("\t" + salesEntries[day][flower]);  
+              total += salesEntries[day][flower];
              }
+             System.out.print("\t" + total);
              break;
-             case 4: 
+             case 4:
+             total = 0;
              System.out.println("Monday");
              for(int flower = 0; flower < 2; flower++)
              {
-              System.out.print("\t" + salesEntries[day][flower]);   
+              System.out.print("\t" + salesEntries[day][flower]);
+              total += salesEntries[day][flower];
              }
+             System.out.print("\t" + total);
              break;
              case 5: 
+             total = 0;
              System.out.println("Monday");
              for(int flower = 0; flower < 2; flower++)
              {
-              System.out.print("\t" + salesEntries[day][flower]);   
+              System.out.print("\t" + salesEntries[day][flower]);
+              total += salesEntries[day][flower];
              }
+             System.out.print("\t" + total);
              break;
              case 6: 
+             total = 0;
              System.out.println("Monday");
              for(int flower = 0; flower < 2; flower++)
              {
-              System.out.print("\t" + salesEntries[day][flower]);   
+              System.out.print("\t" + salesEntries[day][flower]);  
+              total += salesEntries[day][flower];
              }
+             System.out.print("\t" + total);
              break;
              default:
               System.out.println("Wrong amount of days");
@@ -82,6 +105,36 @@ public class FlowerShop
          }
          System.out.println("------------------------------------------------");
       }
+    }
+    void calculateBouquetSales()
+    {
+       int totalRoses =0, totalTulips = 0, totalLillies = 0, totalSales = 0;
+       
+       for(int day = 0; day < 0; day++){
+         for(int flower = 0; flower < 2; flower++)
+         {
+           switch(flower)
+           {
+               case 0:
+                totalRoses += salesEntries[day][flower];
+                totalSales += salesEntries[day][flower];
+               break;
+               case 1:
+                totalTulips += salesEntries[day][flower];
+                totalSales += salesEntries[day][flower];
+               break;
+               case 3:
+                totalLillies += salesEntries[day][flower];
+                totalSales += salesEntries[day][flower];
+               break;
+           }    
+         }
+       }
+      System.out.println("TOTAL");
+      System.out.print("\t" + totalRoses);
+      System.out.print("\t" + totalTulips);
+      System.out.print("\t" + totalLillies);
+      System.out.print("\t" + totalSales);
     }
     public static void main(String[] args)
     {
